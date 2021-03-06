@@ -28,6 +28,15 @@ Authorization Module - Arun & Hariharan
 Portal - All  
 
 
+Module Finsined    
+
+1. Packaging and Delivery module - Ashutosh  
+  Url Sample - http://localhost:8082/packdel/params/Integral/10     
+  Output - {"Pack&DelCahrge":"3000.0"}   
+  Error Checking 
+        Url - http://localhost:8082/packdel/params/Integral/0   
+        Output - {"Pack&DelCahrge":"error"}   
+
 
 
 
