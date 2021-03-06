@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.returnordermanag.packageDeliveryModule.Model.PackDeliveryData;
+
 @RestController
 @RequestMapping("/packdel")
 public class PackDeliveryService {
@@ -17,6 +19,9 @@ public class PackDeliveryService {
 	@Autowired
     private RestTemplate restTemplate;
 	
+	@Autowired
+	private PackDeliveryData packDelData;
+	
 	@RequestMapping("/params/{cType}/{count}")
 	public Map<String, String> packageDelivery(@PathVariable("cType") String cType, @PathVariable("count") int count) {
 		float totalCharge;
@@ -24,13 +29,13 @@ public class PackDeliveryService {
 		if(!(cType.isEmpty()) && count > 0) {
 			if (cType.equals("Integral")) 
 			{
-				totalCharge = (count * 200) + (count * 100);
+				totalCharge = (count * packDelData.getIntergalDelivery()) + (count * packDelData.getIntergalPackaging());
 				map.put("Pack&DelCahrge", Float.toString(totalCharge));
 				return map;
 				
 			}
 			else if (cType.equals("Accessory")) {
-				totalCharge = (count * 100) + (count * 50);
+				totalCharge = (count * packDelData.getAccessoryDelivery()) + (count * packDelData.getAccessoryPacking());
 				map.put("Pack&DelCahrge", Float.toString(totalCharge));
 				return map;
 			}
