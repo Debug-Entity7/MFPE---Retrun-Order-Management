@@ -22,7 +22,7 @@ public class PackDeliveryService {
 	@Autowired
 	private PackDeliveryData packDelData;
 	
-	@RequestMapping("/params/{cType}/{count}")
+	@RequestMapping("/GetPackagingDeliveryCharge/{cType}/{count}")
 	public Map<String, String> packageDelivery(@PathVariable("cType") String cType, @PathVariable("count") int count) {
 		float totalCharge;
 		HashMap<String, String> map = new HashMap<>();
