@@ -30,18 +30,18 @@ public class PackDeliveryService {
 			if (cType.equals("Integral")) 
 			{
 				totalCharge = (count * packDelData.getIntergalDelivery()) + (count * packDelData.getIntergalPackaging());
-				map.put("Pack&DelCahrge", Float.toString(totalCharge));
+				map.put("PacakagingAndDeliveryCharge", Float.toString(totalCharge));
 				return map;
 				
 			}
 			else if (cType.equals("Accessory")) {
 				totalCharge = (count * packDelData.getAccessoryDelivery()) + (count * packDelData.getAccessoryPacking());
-				map.put("Pack&DelCahrge", Float.toString(totalCharge));
+				map.put("PacakagingAndDeliveryCharge", Float.toString(totalCharge));
 				return map;
 			}
-			else {map.put("Pack&DelCahrge", "error");return map;}
+			else {map.put("PacakagingAndDeliveryCharge", "error");return map;}
 		}
-		map.put("Pack&DelCahrge", "error");
+		map.put("PacakagingAndDeliveryCharge", "error");
 		return map;
 	}
 
