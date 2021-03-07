@@ -35,7 +35,15 @@ Module Finsined
   Output - {"PacakagingAndDeliveryCharge":"3000.0"}   
   Error Checking 
         Url - http://localhost:8082/packdel/GetPackagingDeliveryCharge/Integral/0   
-        Output - {"PacakagingAndDeliveryCharge":"error"}   
+        Output - {"PacakagingAndDeliveryCharge":"error"}  
+        
+2. Payment module - Ashutosh  
+  Url Sample - http://localhost:8083/payment/ProcessPayment/ascd12345/1200/500     
+  Output - {"CurrentBalance":"119500.0"}   
+  Error Checking 
+        Url - http://localhost:8083/payment/ProcessPayment/ascd12345/1200/5000000   
+        Output - {"CurrentBalance":"InffusicentFunds"}   
+
 
 
 
