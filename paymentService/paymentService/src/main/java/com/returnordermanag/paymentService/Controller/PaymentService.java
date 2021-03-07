@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class PaymentService {
 	@Autowired
 	private PaymentData paymentdata;
 
-	@RequestMapping("/ProcessPayment/{cCardNo}/{CreditLimit}/{ProcessCharge}")
+	@GetMapping("/ProcessPayment/{cCardNo}/{CreditLimit}/{ProcessCharge}")
 	public Map<String, String> returnUserBalance(@PathVariable("cCardNo") String cCardNo,
 			@PathVariable("CreditLimit") int CreditLimit, @PathVariable("ProcessCharge") float ProcessCharge) {
 		
