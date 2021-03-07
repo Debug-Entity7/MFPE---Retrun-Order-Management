@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class PackDeliveryService {
 	@Autowired
 	private PackDeliveryData packDelData;
 	
-	@RequestMapping("/GetPackagingDeliveryCharge/{cType}/{count}")
+	@GetMapping("/GetPackagingDeliveryCharge/{cType}/{count}")
 	public Map<String, String> packageDelivery(@PathVariable("cType") String cType, @PathVariable("count") int count) {
 		float totalCharge;
 		HashMap<String, String> map = new HashMap<>();
