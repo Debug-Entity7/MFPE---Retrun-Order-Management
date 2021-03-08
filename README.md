@@ -44,6 +44,13 @@ Module Finsined
         Url - http://localhost:8083/payment/ProcessPayment/ascd12345/1200/5000000   
         Output - {"CurrentBalance":"InffusicentFunds"}   
 
+3. Component processing - Ashutosh    
+  Url Sample - http://localhost:8081/comp/CompleteProcessing/145asbcd/ascd12345/1200/500       
+  Output - Payment is Succefull with Remaining value is 119500.0      
+  Error Checking 
+        Url - http://localhost:8081/comp/CompleteProcessing/145asbcd/ascd12345/1200/5000000     
+        Output - Payment is Declined due to Inffusicent Funds     
+
 
 
 
