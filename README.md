@@ -5,11 +5,11 @@ Boiler Code
 
 Project Details  
 
-Req-01 Component processing - port (8081) - http://localhost:8081/comp/checkme - componentProcessModule  
-Req-02 Packaging and Delivery module - port (8082) - http://localhost:8081/packdel/checkme - packageDeliveryModule   
-Req-03 Payment Module - port (8083) - http://localhost:8081/payment/checkme - paymentService    
-Req-04 Authorization Module - port (8084) - http://localhost:8081/auth/checkme - authorizationService  
-Req-05 Portal - port (8080) - http://localhost:8081/portal/checkme - mainPortal      
+Req-01 Component processing - port (8081) -  - componentProcessModule  
+Req-02 Packaging and Delivery module - port (8082) - - packageDeliveryModule   
+Req-03 Payment Module - port (8083) -  - paymentService    
+Req-04 Authorization Module - port (8084) -  - authorizationService  
+Req-05 Portal - port (8080) -  - mainPortal      
 
 Discovery Server - Eureka - port (8085) - http://localhost:8085/    
 
@@ -31,24 +31,24 @@ Portal - All
 Module Finsined    
 
 1. Packaging and Delivery module - Ashutosh  
-  Url Sample - http://localhost:8082/packdel/GetPackagingDeliveryCharge/Integral/10     
+  Url Sample - http://localhost:8082/GetPackagingDeliveryCharge/Integral/10     
   Output - {"PacakagingAndDeliveryCharge":"3000.0"}   
   Error Checking 
-        Url - http://localhost:8082/packdel/GetPackagingDeliveryCharge/Integral/0   
+        Url - http://localhost:8082/GetPackagingDeliveryCharge/Integral/0   
         Output - {"PacakagingAndDeliveryCharge":"error"}  
         
 2. Payment module - Ashutosh  
-  Url Sample - http://localhost:8083/payment/ProcessPayment/ascd12345/1200/500     
+  Url Sample - http://localhost:8083/ProcessPayment/ascd12345/1200/500     
   Output - {"CurrentBalance":"119500.0"}   
   Error Checking 
-        Url - http://localhost:8083/payment/ProcessPayment/ascd12345/1200/5000000   
+        Url - http://localhost:8083/ProcessPayment/ascd12345/1200/5000000   
         Output - {"CurrentBalance":"InffusicentFunds"}   
 
 3. Component processing - Ashutosh    
-  Url Sample - http://localhost:8081/comp/CompleteProcessing/145asbcd/ascd12345/1200/500       
+  Url Sample - http://localhost:8081/CompleteProcessing/145asbcd/ascd12345/1200/500       
   Output - Payment is Succefull with Remaining value is 119500.0      
   Error Checking 
-        Url - http://localhost:8081/comp/CompleteProcessing/145asbcd/ascd12345/1200/5000000     
+        Url - http://localhost:8081/CompleteProcessing/145asbcd/ascd12345/1200/5000000     
         Output - Payment is Declined due to Inffusicent Funds     
 
 
