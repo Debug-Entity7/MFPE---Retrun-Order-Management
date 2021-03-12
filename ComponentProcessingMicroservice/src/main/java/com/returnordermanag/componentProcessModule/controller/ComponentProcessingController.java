@@ -30,7 +30,7 @@ public class ComponentProcessingController {
 	@Autowired
 	AuthenticationFeignClient authenticationFeignClient;
 
-	@GetMapping("/service")
+	@PostMapping("/service")
 	public ProcessResponse getProcessingDetails(@RequestHeader("Authorization") String token,
 			@RequestBody ProcessRequest processRequest) throws Exception {
 		AuthenticationResponse authenticationResponse = null;
